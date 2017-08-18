@@ -67,15 +67,13 @@ function instructions() {
     B4.setAttribute("onclick", "agregar()");
     B4.innerHTML = "Menu";
     B4.setAttribute("class","button");
-    var divdeParrafo = document.createElement("div")
-    divdeParrafo.innerHTML = "<h1>" +"INSTRUCTIONS" + "</h1>";
-    divdeParrafo.innerHTML += "<h3>" +"Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte!" + "</h3>";
-
-    divdeParrafo.style.color = "white";
-    divdeParrafo.style.textAlign = "center";
-
+    var divdeParrafo = document.createElement("div");
+    divdeParrafo.style.fontFamily = 'Orbitron';
+    divdeParrafo.setAttribute("class","divdeParrafo");
+    divdeParrafo.innerHTML = "<h1> INSTRUCTIONS<span> &#160; </span> </h1>";
+    divdeParrafo.innerHTML += "<h3> Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte! </h3>";
        var nuevito = document.getElementsByClassName("nuevito")[0];
-        while (nuevito.firstChild) {
+     while (nuevito.firstChild) {
       nuevito.removeChild(nuevito.firstChild);
     }
     nuevito.appendChild(B4);
@@ -87,9 +85,17 @@ function credits() {
     B4.setAttribute("onclick", "agregar()");
     B4.innerHTML += "Menu";
     B4.setAttribute("class","button");
-            var nuevito = document.getElementsByClassName("nuevito")[0];
+    var divdeCredits = document.createElement("div");
+        divdeCredits.style.fontFamily = 'Orbitron';
+    divdeCredits.setAttribute("class","divdeCredit");
+    var divdV = document.createElement("div");
+    
+    divdeCredits.innerHTML = "<h1> CREDITS<span> &#160; </span> </h1>";
+    divdeCredits.innerHTML += "<h3> Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte! </h3>";
+     var nuevito = document.getElementsByClassName("nuevito")[0];
         while (nuevito.firstChild) {
       nuevito.removeChild(nuevito.firstChild);
     }
+         nuevito.appendChild(divdeCredits);
         nuevito.appendChild(B4);
 }
