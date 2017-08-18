@@ -120,8 +120,6 @@ a.block{
     clear: both;
 }
 
-
-
 .taxi, .empty, .visitada{
     box-sizing: border-box;
     float: left;
@@ -166,7 +164,6 @@ a.block{
 }
 #divdeButton {
     position: relative;
-
     text-align: center;
 }
 .button{
@@ -179,6 +176,60 @@ a.block{
     font-family: 'Orbitron', sans-serif;
     text-align: center;
 }
+.button:active{ -webkit-box-shadow: 2px 4px 2px #8C151B;
+    -moz-box-shadow: 0px 2px 0px #8C151B;
+    box-shadow: 0px 2px 0px #8C151B;
+}
+
+/*-- Codigo Star Wars--*/
+body header {    overflow: hidden;
+ 
+}
+
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 99px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+    0% {
+    top: -100px;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+    100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
 #B4 {
     height: auto;
     width: auto;
@@ -188,7 +239,8 @@ a.block{
 }
 
 .button:hover {
- color: #3a7999;
+    box-shadow: 0 0 0 0 0; 
+    color: #3a7999;
 }
 
 .button:nth-child(1) {
@@ -297,10 +349,9 @@ td{
 #juego{
     padding: 20px 0;
     display: none;
-    background-image: url(../img/color.jpg);
+    background-image: url(../img/fondo.png);
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.;
 }
 
 @keyframes rotate {
@@ -347,34 +398,22 @@ right: 90px;
     text-decoration: none;
     font-family: 'Oswald';
     display: block;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
     border-radius: 6px;
-       width: 60px;
+    width: 60px;
     text-align: center;
-
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
     transform: translate(0, 0);
-
-    -webkit-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -ms-transition: all .2s ease;
-    -o-transition: all .2s ease;
     transition: all .2s ease;
 
-height:54px;
-cursor:pointer;
-overflow:hidden;
+    height:54px;
+    cursor:pointer;
+    overflow:hidden;
 
-font: 0/0 a;
+    font: 0/0 a;
     text-shadow: none;
     color: transparent;
 }
 
 .set-1 a:active, .set-2 a:active {
-   -webkit-transform: translate(0, 3px);
-    -moz-transform: translate(0, 3px);
     transform: translate(0, 3px);
 }
 
@@ -384,137 +423,98 @@ font: 0/0 a;
     text-decoration: none;
     font-family: 'Oswald';
     display: block;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
     border-radius: 6px;
 
     font-size:16px;
-padding:10px 15px 10px 60px;
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
+    padding:10px 15px 10px 60px;
     transform: translate(0, 0);
-
-    -webkit-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -ms-transition: all .2s ease;
-    -o-transition: all .2s ease;
     transition: all .2s ease;
 }
 
 a.twitter-small{
- -webkit-box-shadow: 0px 6px 0px #2695BC;
-    -moz-box-shadow: 0px 6px 0px #2695BC;
     box-shadow: 0px 6px 0px #2695BC;
 }
 a.twitter-small{background:#2CA9E1 url("images/twitter.png") no-repeat center center;}
 
-a.twitter-small:active{ -webkit-box-shadow: 0px 2px 0px #2695BC;
-    -moz-box-shadow: 0px 2px 0px #2695BC;
+a.twitter-small:active{ 
     box-shadow: 0px 2px 0px #2695BC;
 }
 
 a.facebook-small{
- -webkit-box-shadow: 0px 6px 0px #293F63;
-    -moz-box-shadow: 0px 6px 0px #293F63;
     box-shadow: 0px 6px 0px #293F63;
 }
 a.facebook-small{background:#3B5997 url("images/facebook.png") no-repeat center center;}
 
-a.facebook-small:active{ -webkit-box-shadow: 0px 2px 0px #293F63;
-    -moz-box-shadow: 0px 2px 0px #293F63;
+a.facebook-small:active{ 
     box-shadow: 0px 2px 0px #293F63;
 }
 
 
 a.pinterest-small{
- -webkit-box-shadow: 0px 6px 0px #8C151B;
-    -moz-box-shadow: 0px 6px 0px #8C151B;
     box-shadow: 0px 6px 0px #8C151B;
 }
 a.pinterest-small{background:#CD1D1F url("images/pinterest.png") no-repeat center center;}
 
-a.pinterest-small:active{ -webkit-box-shadow: 0px 2px 0px #8C151B;
-    -moz-box-shadow: 0px 2px 0px #8C151B;
+a.pinterest-small:active{ 
     box-shadow: 0px 2px 0px #8C151B;
 }
 
 
 a.gplus-small{
- -webkit-box-shadow: 0px 6px 0px #141412;
-    -moz-box-shadow: 0px 6px 0px #141412;
     box-shadow: 0px 6px 0px #141412;
     position:relative;
 }
 a.gplus-small{background:#353631 url("images/gplus.png") no-repeat center center;}
-a.gplus-small:active{ -webkit-box-shadow: 0px 2px 0px #141412;
-    -moz-box-shadow: 0px 2px 0px #141412;
+a.gplus-small:active{ 
     box-shadow: 0px 2px 0px #141412;
 }
 
 a.rss-small{
- -webkit-box-shadow: 0px 6px 0px #C64802;
-    -moz-box-shadow: 0px 6px 0px #C64802;
     box-shadow: 0px 6px 0px #C64802;
 }
 a.rss-small{background:#FF6501 url("images/rss.png") no-repeat center center;}
-a.rss-small:active{ -webkit-box-shadow: 0px 2px 0px #C64802;
-    -moz-box-shadow: 0px 2px 0px #C64802;
+a.rss-small:active{ 
     box-shadow: 0px 2px 0px #C64802;
 }
 
 a.dribbble-small{
- -webkit-box-shadow: 0px 6px 0px #B23D6D;
-    -moz-box-shadow: 0px 6px 0px #B23D6D;
     box-shadow: 0px 6px 0px #B23D6D;
 }
 a.dribbble-small{background:#E84D89 url("images/dribbble.png") no-repeat center center;}
-a.dribbble-small:active{ -webkit-box-shadow: 0px 2px 0px #B23D6D;
-    -moz-box-shadow: 0px 2px 0px #B23D6D;
+a.dribbble-small:active{
     box-shadow: 0px 2px 0px #B23D6D;
 }
 
 
 a.linkedin-small{
- -webkit-box-shadow: 0px 6px 0px #005377;
-    -moz-box-shadow: 0px 6px 0px #005377;
     box-shadow: 0px 6px 0px #005377;
 }
 a.linkedin-small{background:#0073B2 url("images/linkedin.png") no-repeat center center;}
-a.linkedin-small:active{ -webkit-box-shadow: 0px 2px 0px #005377;
-    -moz-box-shadow: 0px 2px 0px #005377;
+a.linkedin-small:active{ 
     box-shadow: 0px 2px 0px #005377;
 }
 
 a.stumble-small{
- -webkit-box-shadow: 0px 6px 0px #B7371D;
-    -moz-box-shadow: 0px 6px 0px #B7371D;
     box-shadow: 0px 6px 0px #B7371D;
 }
 a.stumble-small{background:#EA4B24 url("images/stumble.png") no-repeat center center;}
-a.stumble-small:active{ -webkit-box-shadow: 0px 2px 0px #B7371D;
-    -moz-box-shadow: 0px 2px 0px #B7371D;
+a.stumble-small:active{
     box-shadow: 0px 2px 0px #B7371D;
 }
 
 a.flickr-small{
- -webkit-box-shadow: 0px 6px 0px #C10E78;
-    -moz-box-shadow: 0px 6px 0px #C10E78;
     box-shadow: 0px 6px 0px #C10E78;
 }
 a.flickr-small{background:#FC1090 url("images/flickr.png") no-repeat center center;}
-a.flickr-small:active{ -webkit-box-shadow: 0px 2px 0px #C10E78;
-    -moz-box-shadow: 0px 2px 0px #C10E78;
+a.flickr-small:active{ 
     box-shadow: 0px 2px 0px #C10E78;
 }
 
 a.vimeo-small{
- -webkit-box-shadow: 0px 6px 0px #1993AF;
-    -moz-box-shadow: 0px 6px 0px #1993AF;
     box-shadow: 0px 6px 0px #1993AF;
 }
 a.vimeo-small{background:#20B9EB url("images/vimeo.png") no-repeat center center;}
-a.vimeo-small:active{ -webkit-box-shadow: 0px 2px 0px #1993AF;
-    -moz-box-shadow: 0px 2px 0px #1993AF;
+a.vimeo-small:active{ 
     box-shadow: 0px 2px 0px #1993AF;
 }
 

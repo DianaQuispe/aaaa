@@ -63,6 +63,7 @@ function startGame() {
 
     iniciar();
     generarMapa(map);
+    isrunning=false;
 }
 function instructions() {
     var B4 = document.createElement("button");
@@ -89,14 +90,24 @@ function credits() {
     B4.setAttribute("onclick", "agregar()");
     B4.innerHTML += "Menu";
     B4.setAttribute("class","button");
-    var divdeCredits = document.createElement("div");
-        divdeCredits.style.fontFamily = 'Orbitron';
-    divdeCredits.setAttribute("class","divdeCredit");
+    var divdeCredits = document.createElement("section");
+    divdeCredits.style.fontFamily = 'Orbitron';
+    divdeCredits.setAttribute("class","star-wars");
     var divdV = document.createElement("div");
-    
-    divdeCredits.innerHTML = "<h1> CREDITS<span> &#160; </span> </h1>";
-    divdeCredits.innerHTML += "<h3> Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte! </h3>";
-     var nuevito = document.getElementsByClassName("nuevito")[0];
+    divdV.setAttribute("class","crawl");
+    var divtitle = document.createElement("div");
+    divtitle.setAttribute("class","title");
+    var h1 = document.createElement("h1");
+    var textoh1 = document.createTextNode("CREDITS");
+    h1.appendChild(textoh1);
+    divtitle.appendChild(h1);
+    var p = document.createElement("p");
+    var textoP = document.createTextNode("Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte!");
+    p.appendChild(textoP);
+    divdV.appendChild(divtitle);
+    divdV.appendChild(p);
+    divdeCredits.appendChild(divdV);
+    var nuevito = document.getElementsByClassName("nuevito")[0];
         while (nuevito.firstChild) {
       nuevito.removeChild(nuevito.firstChild);
     }

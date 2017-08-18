@@ -242,6 +242,7 @@ function nivel() {
   }
 }
 function ganar() {
+    isrunning=true;
     jueguito.innerHTML='';
     level=1;
     var div=document.createElement('div');
@@ -260,12 +261,12 @@ var d;
 function move(a, b, direccion)
 { 
   isrunning=true;
-  if( map[y+a][x+b]=="*" ){
+  if(map[y+a][x+b]=="*"){
       clearTimeout(t);
       isrunning=false;
       return;
   }
-  if( map[y+a][x+b]=="W" ){
+  if(map[y+a][x+b]=="W"){
       clearTimeout(t);
       jueguito.className='rotar';
       s--;
