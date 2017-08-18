@@ -82,7 +82,9 @@ function credits() {
     B4.setAttribute("class","button");
     var divdeCredits = document.createElement("div");
         divdeCredits.style.fontFamily = 'Orbitron';
-    divdeCredits.setAttribute("class","divdeParrafo");
+    divdeCredits.setAttribute("class","divdeCredit");
+    var divdV = document.createElement("div");
+    
     divdeCredits.innerHTML = "<h1> CREDITS<span> &#160; </span> </h1>";
     divdeCredits.innerHTML += "<h3> Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte! </h3>";
      var nuevito = document.getElementsByClassName("nuevito")[0];

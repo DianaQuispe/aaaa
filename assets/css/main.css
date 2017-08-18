@@ -7,7 +7,13 @@ Colors:
 #EDE9E2
 */
 
-/* ---------- Google Font ---------- */
+/* ---------- Google Font ---------- */+
+#divdeM {
+    height: 50%;
+    width: 50%;
+    color:red;
+    display: block;
+}
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
 body{
@@ -210,6 +216,15 @@ a.block{
     height: 80%;
     width: 80%;
 }
+.divdeCredit {
+    background: #293F63;
+    text-align: center;
+    position: relative;
+    left: 23%;
+    height: 80%;
+    width: 60%;
+    color: rgba(85, 189, 244, 0.79);
+}
 
 .divdeParrafo {
     background: #293F63;
@@ -268,7 +283,7 @@ td{
 
 #juego{
     display: none;
-    background-image: url(/assets/img/color.jpg);
+    background-image: url(../img/color.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.;
