@@ -216,7 +216,8 @@ a.block{
     width: 80%;
 }
 .nave {
-    background: url(../img/nave.png) no-repeat center center;
+    background: url(../img/cohete.gif) no-repeat center center;
+    background-size: contain;
 }
 .divdeCredit {
     background: #293F63;
@@ -257,13 +258,13 @@ a.block{
 }
 /*/////////////////////////////////////*/
 
-#down{
+#right{
 	transform: rotate(90deg);
 }
-#up{
+#left{
 	transform: rotate(270deg);
 }
-#left{
+#down{
 	transform: rotate(180deg);
 }
 .llegada {
@@ -271,26 +272,30 @@ a.block{
     background-size: contain;
 }
 .transporte {
-    background: url(../img/supernova.png) no-repeat center center;
-		background-size: contain;
+    background: url(../img/espiral.png) no-repeat center center;
+	background-size: contain;
+    animation: spin 1s infinite;
 }
 .pared {
-		background-color: #4b9cdb;
+	background-image: url(../img/textura.jpg);
+    background-size: cover;
 }
+
 @keyframes spin {
     0 {transform: rotate(0deg);}
     50% {transform: rotate(180deg);}
     100% {transform: rotate(360deg);}
 }
 td{
-		box-sizing: content-box;
-		padding: 0;
-		margin: 0;
+	box-sizing: content-box;
+	padding: 0;
+	margin: 0;
     width: 25px;
     height: 25px;
 }
 
 #juego{
+    padding: 20px 0;
     display: none;
     background-image: url(../img/color.jpg);
     background-repeat: no-repeat;
@@ -320,6 +325,7 @@ td{
 	color: white;
 	font-size: 2em;
 	font-weight: bolder;
+    font-family: 'Orbitron', sans-serif;
 }
 
 /*FOOTER*/

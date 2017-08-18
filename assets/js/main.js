@@ -45,6 +45,9 @@ function agregar() {
     principal.appendChild(divGrande);
 }
 function startGame() {
+    level=1;
+    s=mapas.length-1;
+    mapa=mapas[s];
     var B4 = document.createElement("button");
     B4.setAttribute("id","B4");
     B4.setAttribute("onclick", "agregar()");
@@ -71,7 +74,8 @@ function instructions() {
     divdeParrafo.style.fontFamily = 'Orbitron';
     divdeParrafo.setAttribute("class","divdeParrafo");
     divdeParrafo.innerHTML = "<h1> INSTRUCTIONS<span> &#160; </span> </h1>";
-    divdeParrafo.innerHTML += "<h3> Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte! </h3>";
+    divdeParrafo.innerHTML += "<h4> Ayuda a la nave a aterrizar en un planeta, evita chocar y ayudate de los agujeros negros</h4>";
+    divdeParrafo.innerHTML += "<h4> Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte! </h4>";
        var nuevito = document.getElementsByClassName("nuevito")[0];
      while (nuevito.firstChild) {
       nuevito.removeChild(nuevito.firstChild);

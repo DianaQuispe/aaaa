@@ -15,29 +15,6 @@ var teclas = {
   RIGHT: 39
 };
 document.addEventListener("keydown", movimiento);
-var map0=[  "*************************************************",
-    "*_______________________________________________*",
-    "*_______________________________________________*",
-    "*______**o________***________________**W________*",
-    "*_________________***_________________*_________*",
-    "*_________________*______________*______________*",
-    "*_________________*_____________________*_______*",
-    "*____*__*_____________________*___*_____*_______*",
-    "*_____*_*____________________****_*_____________*",
-    "*_____*_________________________________*_______*",
-    "*______________________________________**_______*",
-    "*________________________**____________**_______*",
-    "*_________________________*_____________________*",
-    "*_____________**_*_______***____________________*",
-    "*_____________***_______________________________*",
-    "*_____________**__________________**____________*",
-    "*______**_________________________**____________*",
-    "*______**_________________________*_____________*",
-    "*________*____________**________________________*",
-    "*____________________***________________________*",
-    "*___________________*_**________________________*",
-    "*_______________________________________________*",
-    "*************************************************"];
 
 var map1 = [" * * * * * * * * * * * * * * * * * * * * ",
     " * *           * * *             * *   * ",
@@ -191,11 +168,13 @@ var map6=[  "                                                 ",
     "                                                 ",
     "                                                 "];
 
-var mapas = [map0, map1, map2, map3, map4, map5, map6];
+var mapas = [map1, map2, map3, map4, map5, map6];
 var s=mapas.length-1;
 var mapa = mapas[s];
 var level=1;
 var map = [];
+var isrunning=false;
+
 function iniciar(){
   map=[];
   for (var i = 0; i < mapa.length; i++){
@@ -249,6 +228,7 @@ function generarMapa(map, direccion) {
 }
 
 function nivel() {
+  isrunning=false;
   jueguito.className='';
   if(s<0){
     ganar();
@@ -267,7 +247,7 @@ function ganar() {
     var div=document.createElement('div');
     div.setAttribute('class', 'ganador');
     var imagen = document.createElement('img');
-    imagen.setAttribute('src','assets/img/car.png');
+    imagen.setAttribute('src','assets/img/nave.png');
     var p=document.createElement('p');
     var texto= document.createTextNode('Ganaste!');
     p.appendChild(texto);
@@ -278,16 +258,18 @@ function ganar() {
 var t;
 var d;
 function move(a, b, direccion)
-{
+{ 
+  isrunning=true;
   if( map[y+a][x+b]=="*" ){
       clearTimeout(t);
+      isrunning=false;
       return;
   }
   if( map[y+a][x+b]=="W" ){
       clearTimeout(t);
       jueguito.className='rotar';
       s--;
-      d = setTimeout(nivel, 2000);
+      d = setTimeout(nivel, 1500);
       return;
   }
   if( y+a==0 || x+b==0 || y+a==yfinal || x+b==xfinal){
@@ -312,31 +294,34 @@ function move(a, b, direccion)
   }
   generarMapa(map, direccion);
 
-  t = setTimeout(function(){ move(a, b, direccion) }, 10);
+  t = setTimeout(function(){ move(a, b, direccion) }, 50);
 }
 
 
 function movimiento(evento)
 {
-  switch(evento.keyCode)
-  {
-    case teclas.UP:
-      move(-1, 0, 'up');
-    break;
-    case teclas.DOWN:
-      move(1, 0, 'down');
-    break;
-    case teclas.LEFT:
-      move(0, -1, 'left');
-    break;
-    case teclas.RIGHT:
-      move(0, 1, 'rigth');
-    break;
+  if(isrunning==false){
+    switch(evento.keyCode)
+    {
+      case teclas.UP:
+        move(-1, 0, 'up');
+      break;
+      case teclas.DOWN:
+        move(1, 0, 'down');
+      break;
+      case teclas.LEFT:
+        move(0, -1, 'left');
+      break;
+      case teclas.RIGHT:
+        move(0, 1, 'right');
+      break;
+    }
   }
 }
 
 function reiniciar() {
   map[y][x]=' ';
   map[yinicial][xinicial]='o';
+  isrunning=false;
   generarMapa(map, 'empezar');
 }
