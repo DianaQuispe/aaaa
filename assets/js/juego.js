@@ -7,7 +7,6 @@ var yfinal;
 var xfinal;
 var xtrans=[];
 var ytrans=[];
-var s=5;
 
 var teclas = {
   UP: 38,
@@ -16,6 +15,29 @@ var teclas = {
   RIGHT: 39
 };
 document.addEventListener("keydown", movimiento);
+var map0=[  "*************************************************",
+    "*_______________________________________________*",
+    "*_______________________________________________*",
+    "*______**o________***________________**W________*",
+    "*_________________***_________________*_________*",
+    "*_________________*______________*______________*",
+    "*_________________*_____________________*_______*",
+    "*____*__*_____________________*___*_____*_______*",
+    "*_____*_*____________________****_*_____________*",
+    "*_____*_________________________________*_______*",
+    "*______________________________________**_______*",
+    "*________________________**____________**_______*",
+    "*_________________________*_____________________*",
+    "*_____________**_*_______***____________________*",
+    "*_____________***_______________________________*",
+    "*_____________**__________________**____________*",
+    "*______**_________________________**____________*",
+    "*______**_________________________*_____________*",
+    "*________*____________**________________________*",
+    "*____________________***________________________*",
+    "*___________________*_**________________________*",
+    "*_______________________________________________*",
+    "*************************************************"];
 
 var map1 = [" * * * * * * * * * * * * * * * * * * * * ",
     " * *           * * *             * *   * ",
@@ -169,8 +191,10 @@ var map6=[  "                                                 ",
     "                                                 ",
     "                                                 "];
 
-var mapas = [map1, map2, map3, map4, map5, map6];
-var mapa = mapas[5];
+var mapas = [map0, map1, map2, map3, map4, map5, map6];
+var s=mapas.length-1;
+var mapa = mapas[s];
+var level=1;
 var map = [];
 function iniciar(){
   map=[];
@@ -192,6 +216,9 @@ function generarMapa(map, direccion) {
   yfinal=map.length-1;
   xfinal=map[0].length-1;
   jueguito.innerHTML='';
+  var texto=document.createElement('div');
+  texto.innerHTML='Nivel '+level;
+  texto.setAttribute('class','ganador');
   var tabla = document.createElement('table');
   tabla.setAttribute('cellspacing','0');
   for (var i = 0; i < map.length; i++) {
@@ -217,21 +244,26 @@ function generarMapa(map, direccion) {
     }
     tabla.appendChild(fila);
   }
+  jueguito.appendChild(texto);
   jueguito.appendChild(tabla);
 }
 
 function nivel() {
   jueguito.className='';
   if(s<0){
-    alert('Ganaste!');
     ganar();
+    s=mapas.length-1;
+    mapa=mapas[s];
   } else {
+    level++;
     mapa=mapas[s];
     iniciar();
     generarMapa(map, 'empezar');
   }
 }
 function ganar() {
+    jueguito.innerHTML='';
+    level=1;
     var div=document.createElement('div');
     div.setAttribute('class', 'ganador');
     var imagen = document.createElement('img');
@@ -241,7 +273,7 @@ function ganar() {
     p.appendChild(texto);
     div.appendChild(imagen);
     div.appendChild(p);
-    jueguito.replaceChild(div, jueguito.firstChild);
+    jueguito.appendChild(div);
 }
 var t;
 var d;
@@ -263,7 +295,7 @@ function move(a, b, direccion)
       clearTimeout(t);
       return;
   }
-  if(map[y+a][x+b]==' '){
+  if(map[y+a][x+b]==' ' || map[y+a][x+b]=='_'){
     map[y][x]=' ';
     map[y+a][x+b]='o';
   }
