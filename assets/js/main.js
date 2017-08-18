@@ -47,7 +47,7 @@ function startGame() {
     B4.setAttribute("id","B4");
     B4.setAttribute("onclick", "agregar()");
     B4.innerHTML = "Menu";
-    B4.setAttribute("class","button");   
+    B4.setAttribute("class","button");
     jueguito.style.display='block';
     var nuevito = document.getElementsByClassName("nuevito")[0];
         while (nuevito.firstChild) {
@@ -55,19 +55,22 @@ function startGame() {
     }
     nuevito.appendChild(B4);
     nuevito.style.height='50px';
+
+    iniciar();
+    generarMapa(map);
 }
 function instructions() {
     var B4 = document.createElement("button");
     B4.setAttribute("id","B4");
     B4.setAttribute("onclick", "agregar()");
     B4.innerHTML = "Menu";
-    B4.setAttribute("class","button");     
+    B4.setAttribute("class","button");
     var divdeParrafo = document.createElement("div")
     divdeParrafo.innerHTML = "<h1>" +"INSTRUCTIONS" + "</h1>";
     divdeParrafo.innerHTML += "<h3>" +"Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte!" + "</h3>";
-     
+
     divdeParrafo.style.color = "white";
-    divdeParrafo.style.textAlign = "center";  
+    divdeParrafo.style.textAlign = "center";
 
        var nuevito = document.getElementsByClassName("nuevito")[0];
         while (nuevito.firstChild) {
@@ -81,7 +84,7 @@ function credits() {
     B4.setAttribute("id","B4");
     B4.setAttribute("onclick", "agregar()");
     B4.innerHTML += "Menu";
-    B4.setAttribute("class","button"); 
+    B4.setAttribute("class","button");
             var nuevito = document.getElementsByClassName("nuevito")[0];
         while (nuevito.firstChild) {
       nuevito.removeChild(nuevito.firstChild);

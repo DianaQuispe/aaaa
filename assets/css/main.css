@@ -1,5 +1,5 @@
 /*
-Colors: 
+Colors:
 #E54E79;
 #E56385;
 #00B2A9;
@@ -82,7 +82,7 @@ nav{
 	height: 100%;
 	top: 0;
 	left: 0;
-	
+
 }
 a.block{
 	display: block;
@@ -102,7 +102,7 @@ a.block{
 .h2-play:hover {
     background-color: antiquewhite;
     color: #5d6f35;
-    
+
 }
 #tablero i{
 	color: #75726C;
@@ -121,7 +121,7 @@ a.block{
 	width: 10%;
 	height: 80px;
 }
-.empty{	
+.empty{
 	background-color: #75726C;
 }
 
@@ -130,7 +130,7 @@ a.block{
 	background-image: url(../img/car.png);
 	background-size: contain;
 	background-position: center 6px ;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 }
 
 .visitada{
@@ -155,11 +155,11 @@ a.block{
     font-size: 5em;
     height: 30%;
     width: 55%;
-    left: 26%   
+    left: 26%
 }
 #divdeButton {
     position: relative;
-    
+
     text-align: center;
 }
 .button{
@@ -178,7 +178,7 @@ a.block{
     position: absolute;
     top: 686px;
     right: 0
-}  
+}
 
 .button:hover {
  color: #3a7999;
@@ -207,27 +207,59 @@ a.block{
     left: 10%;
     height: 80%;
     width: 80%;
-    
+
 }
-.pelota {
-    background-image: url("../assets/img/Pelota_de_Fiesta_Playera_icono.png");
+.nave {
+    background: url(../img/nave.png) no-repeat center center;
     background-size: contain;
+}
+#down{
+	transform: rotate(90deg);
+}
+#up{
+	transform: rotate(270deg);
+}
+#left{
+	transform: rotate(180deg);
 }
 .llegada {
-    background-image: url("../assets/img/Copia%20%20de%20planeta.png");
-    background-size: contain;    
+    background: url(../img/Copia%20%20de%20planeta.png) no-repeat center center;
+		background-size: contain;
+}
+.transporte {
+    background: url(../img/supernova.png) no-repeat center center;
+		background-size: contain;
 }
 .pared {
-    background-image: url(../assets/img/Minior_meteorito.png);
-    background-size: contain;
+		border: 2px dashed #4b9cdb;
 }
-
+@keyframes loadingD {
+    0 {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
 td{
-    width: 10px;
-    height: 10px;
+		box-sizing: content-box;
+		padding: 0;
+		margin: 0;
+    width: 25px;
+    height: 25px;
 }
 
 #juego{
     display: none;
-    background-image: url(../img/galaxia.jpg);
+		background-color:  #75726C;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.rotar td{
+	animation: rotate 2s;
 }

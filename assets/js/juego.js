@@ -173,6 +173,7 @@ var mapas = [map1, map2, map3, map4, map5, map6];
 var mapa = mapas[5];
 var map = [];
 function iniciar(){
+  map=[];
   for (var i = 0; i < mapa.length; i++){
     map[i]=[];
     for (var j = 0; j < mapa[0].length; j++) {
@@ -180,12 +181,12 @@ function iniciar(){
       if(map[i][j]=='o'){
           xinicial=j;
           yinicial=i;
-      } 
+      }
     }
   }
 }
 
-function generarMapa(map) {
+function generarMapa(map, direccion) {
   xtrans=[];
   ytrans=[];
   yfinal=map.length-1;
@@ -202,7 +203,8 @@ function generarMapa(map) {
         } else if(map[i][j]=='o'){
           x=j;
           y=i;
-          celda.setAttribute('class','pelota');
+          celda.setAttribute('class','nave');
+          celda.setAttribute('id',direccion);
         } else if
          (map[i][j]=='W') {
           celda.setAttribute('class', 'llegada');
@@ -218,15 +220,29 @@ function generarMapa(map) {
   jueguito.appendChild(tabla);
 }
 
-iniciar();
-generarMapa(map);
-
 function nivel(s) {
-  mapa=mapas[s];
-  iniciar();
-  generarMapa(map);
+  jueguito.className='';
+  if(s<0){
+    alert('Ganaste!');
+    ganar();
+  } else {
+    mapa=mapas[s];
+    iniciar();
+    generarMapa(map, 'empezar');
+  }
 }
-
+function ganar() {
+    var div=document.createElement('div');
+    div.setAttribute('class', 'ganador');
+    var imagen = document.createElement('img');
+    imagen.setAttribute('src','assets/img/car.png');
+    var p=document.createElement('p');
+    var texto= document.createTextNode('Ganaste!');
+    p.appendChild(texto);
+    div.appendChild(imagen);
+    div.appendChild(p);
+    jueguito.replaceChild(div, jueguito.firstChild);
+}
 var t;
 function move(a, b, direccion)
 {
@@ -234,10 +250,12 @@ function move(a, b, direccion)
       clearTimeout(t);
       return;
   }
+  var d;
   if( map[y+a][x+b]=="W" ){
       clearTimeout(t);
+      jueguito.className='rotar';
       s--;
-      nivel(s);
+      d = setTimeout(nivel(s), 50000);
       return;
   }
   if( y+a==0 || x+b==0 || y+a==yfinal || x+b==xfinal){
@@ -260,7 +278,7 @@ function move(a, b, direccion)
     }
     map[y+a][x+b]='o';
   }
-  generarMapa(map);
+  generarMapa(map, direccion);
 
   t = setTimeout(function(){ move(a, b, direccion) }, 10);
 }
@@ -271,22 +289,22 @@ function movimiento(evento)
   switch(evento.keyCode)
   {
     case teclas.UP:
-      move(-1, 0);
+      move(-1, 0, 'up');
     break;
     case teclas.DOWN:
-      move(1, 0);
+      move(1, 0, 'down');
     break;
     case teclas.LEFT:
-      move(0, -1);
+      move(0, -1, 'left');
     break;
     case teclas.RIGHT:
-      move(0, 1);
+      move(0, 1, 'rigth');
     break;
   }
 }
 
-function reiniciar() { 
+function reiniciar() {
   map[y][x]=' ';
   map[yinicial][xinicial]='o';
-  generarMapa(map);
+  generarMapa(map, 'empezar');
 }
