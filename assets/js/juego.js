@@ -220,7 +220,7 @@ function generarMapa(map, direccion) {
   jueguito.appendChild(tabla);
 }
 
-function nivel(s) {
+function nivel() {
   jueguito.className='';
   if(s<0){
     alert('Ganaste!');
@@ -244,18 +244,18 @@ function ganar() {
     jueguito.replaceChild(div, jueguito.firstChild);
 }
 var t;
+var d;
 function move(a, b, direccion)
 {
   if( map[y+a][x+b]=="*" ){
       clearTimeout(t);
       return;
   }
-  var d;
   if( map[y+a][x+b]=="W" ){
       clearTimeout(t);
       jueguito.className='rotar';
       s--;
-      d = setTimeout(nivel(s), 50000);
+      d = setTimeout(nivel, 2000);
       return;
   }
   if( y+a==0 || x+b==0 || y+a==yfinal || x+b==xfinal){

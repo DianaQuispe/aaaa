@@ -1,6 +1,8 @@
 var principal = document.getElementsByClassName("principal")[0];
 var juego = document.getElementsByClassName("juego")[0];
 var h2play = document.getElementsByClassName("h2-play")[0];
+var jueguito=document.getElementById('juego');
+
 
 h2play.onclick = function() {
     while (juego.firstChild) {
