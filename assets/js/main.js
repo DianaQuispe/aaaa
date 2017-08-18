@@ -102,8 +102,7 @@ function credits() {
     h1.appendChild(textoh1);
     divtitle.appendChild(h1);
     var p = document.createElement("p");
-    var textoP = document.createTextNode("Tienes que usar los botones del teclado para poder jugar. En total hay seis niveles uno mas complicado que el otro... Te deseo mucha suerte!");
-    p.appendChild(textoP);
+    p.innerHTML='Melanie Laura Ocharan Cardenas<br>Diana Quispe Ccallo'
     divdV.appendChild(divtitle);
     divdV.appendChild(p);
     divdeCredits.appendChild(divdV);
